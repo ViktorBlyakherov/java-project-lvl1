@@ -23,41 +23,37 @@ public class App {
 
         Scanner scanner = new Scanner(System.in);
         String userName;
-//        boolean isPlay = true;
-//        while (isPlay) {
-            Engine.printMenu();
-            int userChoice = scanner.nextInt();
-            System.out.println("Your choice: " + userChoice);
-            switch (userChoice) {
-                case greetingCode:
-                    userName = Engine.getGreeting();
-                    break;
-                case evenCode:
-                    userName = Engine.getGreeting();
-                    EvenGame.playEven(userName);
-                    break;
-                case calcCode:
-                    userName = Engine.getGreeting();
-                    CalculateGame.playCalculate(userName);
-                    break;
-                case gcdCode:
-                    userName = Engine.getGreeting();
-                    GCD.playGCD(userName);
-                    break;
-                case progressionCode:
-                    userName = Engine.getGreeting();
-                    Progression.playProgression(userName);
-                    break;
-                case primeCode:
-                    userName = Engine.getGreeting();
-                    Prime.playPrime(userName);
-                    break;
-                case exitCode:
-//                    isPlay = false;
-                    break;
-                default:
-                    break;
-            }
-//    }
+        Engine.printMenu();
+        int userChoice = scanner.nextInt();
+        System.out.println("Your choice: " + userChoice);
+        switch (userChoice) {
+            case greetingCode:
+                userName = Engine.getGreeting();
+                break;
+            case evenCode:
+                userName = Engine.getGreeting();
+                EvenGame.playEven(userName);
+                break;
+            case calcCode:
+                userName = Engine.getGreeting();
+                CalculateGame.playCalculate(userName);
+                break;
+            case gcdCode:
+                userName = Engine.getGreeting();
+                GCD.playGCD(userName);
+                break;
+            case progressionCode:
+                userName = Engine.getGreeting();
+                Progression.playProgression(userName);
+                break;
+            case primeCode:
+                userName = Engine.getGreeting();
+                Prime.playPrime(userName);
+                break;
+            case exitCode:
+                break;
+            default:
+                break;
+        }
     }
 }

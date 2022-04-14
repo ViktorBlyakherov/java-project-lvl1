@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class Engine {
     public static String getGreeting() {
+        System.out.println("Welcome to the Brain Games!");
         System.out.println("May I have your name?");
         Scanner scanner = new Scanner(System.in);
         String name = scanner.nextLine();
