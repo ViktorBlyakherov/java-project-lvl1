@@ -19,7 +19,6 @@ public class App {
         final int gcdCode = 4;
         final int progressionCode = 5;
         final int primeCode = 6;
-        final int exitCode = 0;
 
         Scanner scanner = new Scanner(System.in);
         String userName;
@@ -49,8 +48,6 @@ public class App {
             case primeCode:
                 userName = Engine.getGreeting();
                 Prime.playPrime(userName);
-                break;
-            case exitCode:
                 break;
             default:
                 break;
