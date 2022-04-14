@@ -34,11 +34,12 @@ tasks.named('test') {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
 }
-/*
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
 compileJava {
-  options.release = 17
+    options.release = 17
 }
-*/
 
 run {
   standardInput = System.in
