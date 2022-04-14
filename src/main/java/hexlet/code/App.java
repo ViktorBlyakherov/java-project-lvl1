@@ -23,8 +23,8 @@ public class App {
 
         Scanner scanner = new Scanner(System.in);
         String userName;
-        boolean isPlay = true;
-        while (isPlay) {
+//        boolean isPlay = true;
+//        while (isPlay) {
             Engine.printMenu();
             int userChoice = scanner.nextInt();
             System.out.println("Your choice: " + userChoice);
@@ -53,11 +53,11 @@ public class App {
                     Prime.playPrime(userName);
                     break;
                 case exitCode:
-                    isPlay = false;
+//                    isPlay = false;
                     break;
                 default:
                     break;
             }
-        }
+//    }
     }
 }
