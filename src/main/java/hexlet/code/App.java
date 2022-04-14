@@ -30,26 +30,26 @@ public class App {
             System.out.println("Your choice: " + userChoice);
             switch (userChoice) {
                 case greetingCode:
-                    userName = Engine.greetingsUser();
+                    userName = Engine.getGreeting();
                     break;
                 case evenCode:
-                    userName = Engine.greetingsUser();
+                    userName = Engine.getGreeting();
                     EvenGame.playEven(userName);
                     break;
                 case calcCode:
-                    userName = Engine.greetingsUser();
+                    userName = Engine.getGreeting();
                     CalculateGame.playCalculate(userName);
                     break;
                 case gcdCode:
-                    userName = Engine.greetingsUser();
+                    userName = Engine.getGreeting();
                     GCD.playGCD(userName);
                     break;
                 case progressionCode:
-                    userName = Engine.greetingsUser();
+                    userName = Engine.getGreeting();
                     Progression.playProgression(userName);
                     break;
                 case primeCode:
-                    userName = Engine.greetingsUser();
+                    userName = Engine.getGreeting();
                     Prime.playPrime(userName);
                     break;
                 case exitCode:
