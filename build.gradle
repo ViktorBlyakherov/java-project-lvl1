@@ -9,6 +9,7 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
+    id 'checkstyle'	
 }
 
 repositories {
@@ -33,3 +34,12 @@ tasks.named('test') {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
 }
+
+compileJava {
+  options.release = 17
+}
+
+run {
+  standardInput = System.in
+}
+
