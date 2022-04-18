@@ -14,7 +14,7 @@ public class CalculateGame {
             case "*":
                 return a * b;
             default:
-                return 0;
+                throw new Error("Неизвестная операция!");
         }
     }
 
