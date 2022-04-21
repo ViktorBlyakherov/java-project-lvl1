@@ -1,4 +1,12 @@
+/*
+Привет! Не знаю как писать вам, пишу здесь.
+По первому замечанию, все вызовы кроме самого первого, где просто приветствие, перенес в игры. Первый пункт это формально
+не игра, но делать под нее отдельный класс вроде бы как-то неправильно. Но тогда остается вызов одного метода из движка.
+Остальное все поправил.
+По разметке read.md у меня сейчас все 3 бейджика корректно отображаются. Нужно что-то еще исправлять?
+*/
 package hexlet.code;
+
 
 import java.util.Scanner;
 import hexlet.code.games.Prime;
@@ -9,8 +17,6 @@ import hexlet.code.games.Progression;
 
 
 public class App {
-    public static final int  ROUNDNUMBER = 3;
-    public static final int  MAXRNDNUMBER = 100;
 
     public static void printMenu() {
         System.out.println("Please enter the game number and press Enter");
@@ -41,24 +47,19 @@ public class App {
                 userName = Engine.getGreeting();
                 break;
             case evenCode:
-                userName = Engine.getGreeting();
-                EvenGame.playEven(userName);
+                EvenGame.playEven();
                 break;
             case calcCode:
-                userName = Engine.getGreeting();
-                CalculateGame.playCalculate(userName);
+                CalculateGame.playCalculate();
                 break;
             case gcdCode:
-                userName = Engine.getGreeting();
-                GCD.playGCD(userName);
+                GCD.playGCD();
                 break;
             case progressionCode:
-                userName = Engine.getGreeting();
-                Progression.playProgression(userName);
+                Progression.playProgression();
                 break;
             case primeCode:
-                userName = Engine.getGreeting();
-                Prime.playPrime(userName);
+                Prime.playPrime();
                 break;
             default:
                 System.out.println("Такой игры нет!");

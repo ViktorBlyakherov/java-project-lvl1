@@ -1,9 +1,9 @@
 package hexlet.code.games;
 
-import hexlet.code.App;
 import hexlet.code.Engine;
 
 public class CalculateGame {
+    public static final int  MAXRNDNUMBER = 100;
 
     private static int calc(int a, int b, String operator) {
         switch (operator) {
@@ -18,13 +18,14 @@ public class CalculateGame {
         }
     }
 
-    public static void playCalculate(String userName) {
+    public static void playCalculate() {
+        String userName = Engine.getGreeting();
         System.out.println("What is the result of the expression?");
         boolean isRightAnswer = true;
 
-        for (int i = 1; i <= App.ROUNDNUMBER; i++) {
-            int operandLeft = Engine.getRandomNumber(App.MAXRNDNUMBER);
-            int operandRight = Engine.getRandomNumber(App.MAXRNDNUMBER);
+        for (int i = 1; i <= Engine.ROUNDNUMBER; i++) {
+            int operandLeft = Engine.getRandomNumber(MAXRNDNUMBER);
+            int operandRight = Engine.getRandomNumber(MAXRNDNUMBER);
             String operator = Engine.getRandomOperation();
             Engine.askQuestion(operandLeft + " " + operator + " " + operandRight);
             int resultCalc = calc(operandLeft, operandRight, operator);

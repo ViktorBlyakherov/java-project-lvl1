@@ -1,18 +1,19 @@
 package hexlet.code.games;
 
-import hexlet.code.App;
 import hexlet.code.Engine;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Progression {
+    public static final int  MAXRNDNUMBER = 100;
+
     private static int rightAnswer;
     private static final int PROGRESSIONLENGHT = 10;
     private static final int STEPMAXSIZE = 10;
 
     private static void makeProgression(List pl) {
-        int progressionBegin = Engine.getRandomNumber(App.MAXRNDNUMBER);
+        int progressionBegin = Engine.getRandomNumber(MAXRNDNUMBER);
         int progressionStep = Engine.getRandomNumber(STEPMAXSIZE);
 
         for (int i = 1; i <= PROGRESSIONLENGHT; i++) {
@@ -36,11 +37,12 @@ public class Progression {
         return tempStr;
     }
 
-    public static void playProgression(String userName) {
+    public static void playProgression() {
+        String userName = Engine.getGreeting();
         System.out.println("What number is missing in the progression?");
         boolean isRightAnswer = true;
 
-        for (int i = 1; i <= App.ROUNDNUMBER; i++) {
+        for (int i = 1; i <= Engine.ROUNDNUMBER; i++) {
             List<Integer> progressionList = new ArrayList<Integer>();
             makeProgression(progressionList);
             Engine.askQuestion(convertProgressionToString(progressionList));

@@ -1,9 +1,10 @@
 package hexlet.code.games;
 
-import hexlet.code.App;
 import hexlet.code.Engine;
 
 public class GCD {
+    public static final int  MAXRNDNUMBER = 100;
+
     private static int findGCD(int a, int b) {
         int gcd = 1;
         for (int i = 1; i <= a && i <= b; i++) {
@@ -14,13 +15,14 @@ public class GCD {
         return gcd;
     }
 
-    public static void playGCD(String userName) {
+    public static void playGCD() {
+        String userName = Engine.getGreeting();
         System.out.println("Find the greatest common divisor of given numbers.");
         boolean isRightAnswer = true;
 
-        for (int i = 1; i <= App.ROUNDNUMBER; i++) {
-            int firstNumber = Engine.getRandomNumber(App.MAXRNDNUMBER);
-            int secondNumber = Engine.getRandomNumber(App.MAXRNDNUMBER);
+        for (int i = 1; i <= Engine.ROUNDNUMBER; i++) {
+            int firstNumber = Engine.getRandomNumber(MAXRNDNUMBER);
+            int secondNumber = Engine.getRandomNumber(MAXRNDNUMBER);
             Engine.askQuestion(firstNumber + " " + secondNumber);
             int rightGCD = findGCD(firstNumber, secondNumber);
             String userAnswer = Engine.getAnswer();

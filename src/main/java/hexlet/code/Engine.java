@@ -2,6 +2,8 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
+    public static final int  ROUNDNUMBER = 3;
+
     public static String getGreeting() {
         System.out.println("Welcome to the Brain Games!");
         System.out.println("May I have your name?");
@@ -39,7 +41,8 @@ public class Engine {
             case multiplyOperatorCode:
                 return "*";
             default:
-                throw new Error("Неизвестная операция!");
+                System.out.println("Неизвестная операция!");
+                return "";
         }
     }
 
