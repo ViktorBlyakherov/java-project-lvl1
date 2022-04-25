@@ -38,28 +38,16 @@ public class Progression {
     }
 
     public static void playProgression() {
-        String userName = Engine.getGreeting();
-        System.out.println("What number is missing in the progression?");
-        boolean isRightAnswer = true;
+        String taskText = "What number is missing in the progression?";
+        String[] questionsArray = new String[Engine.ROUNDNUMBER];
+        String[] answersArray = new String[Engine.ROUNDNUMBER];
 
-        for (int i = 1; i <= Engine.ROUNDNUMBER; i++) {
+        for (int i = 0; i < Engine.ROUNDNUMBER; i++) {
             List<Integer> progressionList = new ArrayList<Integer>();
             makeProgression(progressionList);
-            Engine.askQuestion(convertProgressionToString(progressionList));
-            String userAnswer = Engine.getAnswer();
-
-            if (Integer.parseInt(userAnswer) == rightAnswer) {
-                Engine.printCorrectResult();
-            } else {
-                Engine.printIncorrectResult(userAnswer, Integer.toString(rightAnswer));
-                Engine.printFail(userName);
-                isRightAnswer = false;
-                break;
-            }
+            questionsArray[i] = convertProgressionToString(progressionList);
+            answersArray[i] = Integer.toString(rightAnswer);
         }
-
-        if (isRightAnswer) {
-            Engine.printSucces(userName);
-        }
+        Engine.play(questionsArray, answersArray, taskText);
     }
 }

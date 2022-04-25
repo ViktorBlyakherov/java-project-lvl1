@@ -16,29 +16,16 @@ public class Prime {
     }
 
     public static void playPrime() {
-        String userName = Engine.getGreeting();
-        System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'");
-        boolean isRightAnswer = true;
+        String taskText = "Answer 'yes' if given number is prime. Otherwise answer 'no'";
+        String[] questionsArray = new String[Engine.ROUNDNUMBER];
+        String[] answersArray = new String[Engine.ROUNDNUMBER];
 
-        for (int i = 1; i <= Engine.ROUNDNUMBER; i++) {
+        for (int i = 0; i < Engine.ROUNDNUMBER; i++) {
             int firstNumber = Engine.getRandomNumber(MAXRNDNUMBER);
-            Engine.askQuestion(Integer.toString(firstNumber));
+            questionsArray[i] = Integer.toString(firstNumber);
             String rightAnswer = isPrime(firstNumber);
-            String userAnswer = Engine.getAnswer();
-
-
-            if (userAnswer.equals(rightAnswer)) {
-                Engine.printCorrectResult();
-            } else {
-                Engine.printIncorrectResult(userAnswer, rightAnswer);
-                Engine.printFail(userName);
-                isRightAnswer = false;
-                break;
-            }
+            answersArray[i] = rightAnswer;
         }
-
-        if (isRightAnswer) {
-            Engine.printSucces(userName);
-        }
+        Engine.play(questionsArray, answersArray, taskText);
     }
 }

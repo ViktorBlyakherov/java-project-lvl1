@@ -19,31 +19,19 @@ public class CalculateGame {
     }
 
     public static void playCalculate() {
-        String userName = Engine.getGreeting();
-        System.out.println("What is the result of the expression?");
-        boolean isRightAnswer = true;
+        String taskText = "What is the result of the expression?";
+        String[] questionsArray = new String[Engine.ROUNDNUMBER];
+        String[] answersArray = new String[Engine.ROUNDNUMBER];
 
-        for (int i = 1; i <= Engine.ROUNDNUMBER; i++) {
+        for (int i = 0; i < Engine.ROUNDNUMBER; i++) {
             int operandLeft = Engine.getRandomNumber(MAXRNDNUMBER);
             int operandRight = Engine.getRandomNumber(MAXRNDNUMBER);
             String operator = Engine.getRandomOperation();
-            Engine.askQuestion(operandLeft + " " + operator + " " + operandRight);
+            questionsArray[i] = operandLeft + " " + operator + " " + operandRight;
             int resultCalc = calc(operandLeft, operandRight, operator);
-            String userAnswer = Engine.getAnswer();
-
-            if (Integer.parseInt(userAnswer) == resultCalc) {
-                Engine.printCorrectResult();
-            } else {
-                Engine.printIncorrectResult(userAnswer, Integer.toString(resultCalc));
-                Engine.printFail(userName);
-                isRightAnswer = false;
-                break;
-            }
+            answersArray[i] = Integer.toString(resultCalc);
         }
-
-        if (isRightAnswer) {
-            Engine.printSucces(userName);
-        }
+        Engine.play(questionsArray, answersArray, taskText);
     }
 }
 

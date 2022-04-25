@@ -57,6 +57,27 @@ public class Engine {
         return userAnswer;
     }
 
+    public static void play(String[] questionsArray, String[] answersArray, String taskText) {
+        boolean isRightAnswer = true;
+        String userName = Engine.getGreeting();
+        System.out.println(taskText);
+        for (int i = 0; i < ROUNDNUMBER; i++) {
+            Engine.askQuestion(questionsArray[i]);
+            String userAnswer = Engine.getAnswer();
+            if (userAnswer.equals(answersArray[i])) {
+                Engine.printCorrectResult();
+            } else {
+                Engine.printIncorrectResult(userAnswer, answersArray[i]);
+                Engine.printFail(userName);
+                isRightAnswer = false;
+                break;
+            }
+        }
+        if (isRightAnswer) {
+            Engine.printSucces(userName);
+        }
+    }
+
     public static void printIncorrectResult(String userAnswer, String rightAnswer) {
         System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was " + rightAnswer + ".");
     }
