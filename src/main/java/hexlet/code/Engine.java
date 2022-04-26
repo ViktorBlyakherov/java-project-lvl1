@@ -2,7 +2,7 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
-    public static final int  ROUNDNUMBER = 3;
+    public static final int ROUND_NUMBER = 3;
 
     public static String getGreeting() {
         System.out.println("Welcome to the Brain Games!");
@@ -15,14 +15,6 @@ public class Engine {
 
     public static int getRandomNumber(int max) {
         return (int) (Math.random() * max) + 1;
-    }
-
-    public static void printFail(String userName) {
-        System.out.println("Let's try again, " + userName + "!");
-    }
-
-    public static void printSucces(String userName) {
-        System.out.println("Congratulations, " + userName + "!");
     }
 
     public static String getRandomOperation() {
@@ -46,43 +38,31 @@ public class Engine {
         }
     }
 
-    public static void askQuestion(String task) {
-        System.out.println("Question: " +  task);
-    }
-
-    public static String getAnswer() {
+    public static void play(String[][] qaArray,  String taskText) {
+        System.out.println("Welcome to the Brain Games!");
+        System.out.println("May I have your name?");
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Your answer: ");
-        String userAnswer = scanner.next();
-        return userAnswer;
-    }
+        String userName = scanner.nextLine();
+        System.out.println("Hello, " + userName + "!");
 
-    public static void play(String[] questionsArray, String[] answersArray, String taskText) {
         boolean isRightAnswer = true;
-        String userName = Engine.getGreeting();
         System.out.println(taskText);
-        for (int i = 0; i < ROUNDNUMBER; i++) {
-            Engine.askQuestion(questionsArray[i]);
-            String userAnswer = Engine.getAnswer();
-            if (userAnswer.equals(answersArray[i])) {
-                Engine.printCorrectResult();
+        for (int i = 0; i < ROUND_NUMBER; i++) {
+            System.out.println("Question: " +  qaArray[i][0]);
+            System.out.print("Your answer: ");
+            String userAnswer = scanner.next();
+            if (userAnswer.equals(qaArray[i][1])) {
+                System.out.println("Correct!");
             } else {
-                Engine.printIncorrectResult(userAnswer, answersArray[i]);
-                Engine.printFail(userName);
+                System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was "
+                        + qaArray[i][1] + ".");
+                System.out.println("Let's try again, " + userName + "!");
                 isRightAnswer = false;
                 break;
             }
         }
         if (isRightAnswer) {
-            Engine.printSucces(userName);
+            System.out.println("Congratulations, " + userName + "!");
         }
-    }
-
-    public static void printIncorrectResult(String userAnswer, String rightAnswer) {
-        System.out.println("'" + userAnswer + "' is wrong answer ;(. Correct answer was " + rightAnswer + ".");
-    }
-
-    public static void printCorrectResult() {
-        System.out.println("Correct!");
     }
 }

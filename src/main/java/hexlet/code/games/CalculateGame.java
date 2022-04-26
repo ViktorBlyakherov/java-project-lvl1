@@ -3,7 +3,8 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public class CalculateGame {
-    public static final int  MAXRNDNUMBER = 100;
+    public static final int MAX_RND_NUMBER = 100;
+    public static final String TASK_TEXT = "What is the result of the expression?";
 
     private static int calc(int a, int b, String operator) {
         switch (operator) {
@@ -19,19 +20,17 @@ public class CalculateGame {
     }
 
     public static void playCalculate() {
-        String taskText = "What is the result of the expression?";
-        String[] questionsArray = new String[Engine.ROUNDNUMBER];
-        String[] answersArray = new String[Engine.ROUNDNUMBER];
+        String[][] qaArray = new String[Engine.ROUND_NUMBER][2];
 
-        for (int i = 0; i < Engine.ROUNDNUMBER; i++) {
-            int operandLeft = Engine.getRandomNumber(MAXRNDNUMBER);
-            int operandRight = Engine.getRandomNumber(MAXRNDNUMBER);
+        for (int i = 0; i < Engine.ROUND_NUMBER; i++) {
+            int operandLeft = Engine.getRandomNumber(MAX_RND_NUMBER);
+            int operandRight = Engine.getRandomNumber(MAX_RND_NUMBER);
             String operator = Engine.getRandomOperation();
-            questionsArray[i] = operandLeft + " " + operator + " " + operandRight;
+            qaArray[i][0] = operandLeft + " " + operator + " " + operandRight;
             int resultCalc = calc(operandLeft, operandRight, operator);
-            answersArray[i] = Integer.toString(resultCalc);
+            qaArray[i][1] = Integer.toString(resultCalc);
         }
-        Engine.play(questionsArray, answersArray, taskText);
+        Engine.play(qaArray, TASK_TEXT);
     }
 }
 

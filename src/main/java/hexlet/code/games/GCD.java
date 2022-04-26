@@ -3,7 +3,8 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public class GCD {
-    public static final int  MAXRNDNUMBER = 20;
+    public static final int MAX_RND_NUMBER = 20;
+    public static final String TASK_TEXT = "Find the greatest common divisor of given numbers.";
 
     private static int findGCD(int a, int b) {
         int gcd = 1;
@@ -16,17 +17,15 @@ public class GCD {
     }
 
     public static void playGCD() {
-        String taskText = "Find the greatest common divisor of given numbers.";
-        String[] questionsArray = new String[Engine.ROUNDNUMBER];
-        String[] answersArray = new String[Engine.ROUNDNUMBER];
+        String[][] qaArray = new String[Engine.ROUND_NUMBER][2];
 
-        for (int i = 0; i < Engine.ROUNDNUMBER; i++) {
-            int firstNumber = Engine.getRandomNumber(MAXRNDNUMBER);
-            int secondNumber = Engine.getRandomNumber(MAXRNDNUMBER);
-            questionsArray[i] = firstNumber + " " + secondNumber;
+        for (int i = 0; i < Engine.ROUND_NUMBER; i++) {
+            int firstNumber = Engine.getRandomNumber(MAX_RND_NUMBER);
+            int secondNumber = Engine.getRandomNumber(MAX_RND_NUMBER);
+            qaArray[i][0] = firstNumber + " " + secondNumber;
             int rightGCD = findGCD(firstNumber, secondNumber);
-            answersArray[i] = Integer.toString(rightGCD);
+            qaArray[i][1] = Integer.toString(rightGCD);
         }
-        Engine.play(questionsArray, answersArray, taskText);
+        Engine.play(qaArray, TASK_TEXT);
     }
 }

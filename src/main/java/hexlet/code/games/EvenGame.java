@@ -3,23 +3,23 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public class EvenGame {
-    public static final int  MAXRNDNUMBER = 100;
+    public static final int  MAX_RND_NUMBER = 100;
+    public static final  String TASK_TEXT = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
     public static void playEven() {
-        String taskText = "Answer 'yes' if the number is even, otherwise answer 'no'.";
-        String[] questionsArray = new String[Engine.ROUNDNUMBER];
-        String[] answersArray = new String[Engine.ROUNDNUMBER];
 
-        for (int i = 0; i < Engine.ROUNDNUMBER; i++) {
-            int tempNumber = Engine.getRandomNumber(MAXRNDNUMBER);
+        String[][] qaArray = new String[Engine.ROUND_NUMBER][2];
+
+        for (int i = 0; i < Engine.ROUND_NUMBER; i++) {
+            int tempNumber = Engine.getRandomNumber(MAX_RND_NUMBER);
             boolean isEven = (tempNumber % 2 == 0);
             if (isEven) {
-                answersArray[i] = "yes";
+                qaArray[i][1] = "yes";
             } else {
-                answersArray[i] = "no";
+                qaArray[i][1] = "no";
             }
-            questionsArray[i] = Integer.toString(tempNumber);
+            qaArray[i][0] = Integer.toString(tempNumber);
         }
-        Engine.play(questionsArray, answersArray, taskText);
+        Engine.play(qaArray, TASK_TEXT);
     }
 }
