@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class GCD {
     public static final int MAX_RND_NUMBER = 20;
@@ -20,8 +21,8 @@ public class GCD {
         String[][] qaArray = new String[Engine.ROUND_NUMBER][2];
 
         for (int i = 0; i < Engine.ROUND_NUMBER; i++) {
-            int firstNumber = Engine.getRandomNumber(MAX_RND_NUMBER);
-            int secondNumber = Engine.getRandomNumber(MAX_RND_NUMBER);
+            int firstNumber = Utils.getRandomNumber(MAX_RND_NUMBER);
+            int secondNumber = Utils.getRandomNumber(MAX_RND_NUMBER);
             qaArray[i][0] = firstNumber + " " + secondNumber;
             int rightGCD = findGCD(firstNumber, secondNumber);
             qaArray[i][1] = Integer.toString(rightGCD);

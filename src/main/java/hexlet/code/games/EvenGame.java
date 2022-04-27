@@ -1,6 +1,7 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class EvenGame {
     public static final int  MAX_RND_NUMBER = 100;
@@ -11,7 +12,7 @@ public class EvenGame {
         String[][] qaArray = new String[Engine.ROUND_NUMBER][2];
 
         for (int i = 0; i < Engine.ROUND_NUMBER; i++) {
-            int tempNumber = Engine.getRandomNumber(MAX_RND_NUMBER);
+            int tempNumber = Utils.getRandomNumber(MAX_RND_NUMBER);
             boolean isEven = (tempNumber % 2 == 0);
             if (isEven) {
                 qaArray[i][1] = "yes";

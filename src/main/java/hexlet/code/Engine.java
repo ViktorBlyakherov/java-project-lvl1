@@ -4,40 +4,6 @@ import java.util.Scanner;
 public class Engine {
     public static final int ROUND_NUMBER = 3;
 
-    public static String getGreeting() {
-        System.out.println("Welcome to the Brain Games!");
-        System.out.println("May I have your name?");
-        Scanner scanner = new Scanner(System.in);
-        String name = scanner.nextLine();
-        System.out.println("Hello, " + name + "!");
-        return name;
-    }
-
-    public static int getRandomNumber(int max) {
-        return (int) (Math.random() * max) + 1;
-    }
-
-    public static String getRandomOperation() {
-        final int quantityOperators = 3;
-        final int plusOperatorCode = 1;
-        final int minusOperatorCode = 2;
-        final int multiplyOperatorCode = 3;
-
-
-        int tempNumber = (int) (Math.random() * quantityOperators + 1);
-        switch (tempNumber) {
-            case plusOperatorCode:
-                return "+";
-            case minusOperatorCode:
-                return "-";
-            case multiplyOperatorCode:
-                return "*";
-            default:
-                System.out.println("Неизвестная операция!");
-                return "";
-        }
-    }
-
     public static void play(String[][] qaArray,  String taskText) {
         System.out.println("Welcome to the Brain Games!");
         System.out.println("May I have your name?");

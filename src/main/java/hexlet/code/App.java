@@ -20,7 +20,6 @@ public class App {
         final int primeCode = 6;
 
         Scanner scanner = new Scanner(System.in);
-        String userName;
 
         System.out.println("Please enter the game number and press Enter");
         System.out.println("1 - Greet");
@@ -36,7 +35,7 @@ public class App {
         System.out.println("Your choice: " + userChoice);
         switch (userChoice) {
             case greetingCode:
-                userName = Engine.getGreeting();
+                Cli.greetings();
                 break;
             case evenCode:
                 EvenGame.playEven();
