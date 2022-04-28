@@ -11,18 +11,11 @@ public class ProgressionGame {
     private static final int PROGRESSION_LENGHT = 10;
     private static final int STEP_MAX_SIZE = 10;
 
-    /*Не понял ваш комментарий:
-    Из названия метода makeProgression() можно сделать вывод что он возвращает прогрессию, а по факту возвращает
-    одно число - это необходимо поправить. Пусть в методе makeProgression() будет создаваться массив (или список)
-    с прогрессией. Затем можно заменить одно число на многоточие. После этого сформировать строчку для вопроса -
-    String.join(" ", progressionList).
-
-     */
 
     private static void makeProgression(List pl) {
         int progressionBegin = Utils.getRandomNumber(MAX_RND_NUMBER);
         int progressionStep = Utils.getRandomNumber(STEP_MAX_SIZE);
-        for (int i = 1; i <= PROGRESSION_LENGHT; i++) {
+        for (int i = 0; i < PROGRESSION_LENGHT; i++) {
             pl.add(Integer.toString(progressionBegin));
             progressionBegin = progressionBegin + progressionStep;
         }
@@ -34,8 +27,8 @@ public class ProgressionGame {
         for (int i = 0; i < Engine.ROUND_NUMBER; i++) {
             List<String> progressionList = new ArrayList<>();
             makeProgression(progressionList);
-            int indexToHide = Utils.getRandomNumber(PROGRESSION_LENGHT);
-            String rightAnswer = progressionList.get(indexToHide - 1);
+            int indexToHide = Utils.getRandomNumber(PROGRESSION_LENGHT) - 1;
+            String rightAnswer = progressionList.get(indexToHide);
             progressionList.set(indexToHide, "..");
             qaArray[i][0] = String.join(" ", progressionList);
             qaArray[i][1] = rightAnswer;
