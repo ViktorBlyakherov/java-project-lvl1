@@ -6,12 +6,12 @@ import hexlet.code.Utils;
 public class CalculateGame {
     public static final int MAX_RND_NUMBER = 100;
     public static final String TASK_TEXT = "What is the result of the expression?";
-    public static final String[] operatorsArray = {"+", "-", "*"};
+    public static final String[] OPERATORS_ARRAY = {"+", "-", "*"};
 
     public static String getRandomOperation() {
-        final int quantityOperators = operatorsArray.length;
-        int tempNumber = (int) (Math.random() * quantityOperators + 1);
-        return operatorsArray[tempNumber];
+        final int quantityOperators = OPERATORS_ARRAY.length;
+        int tempNumber = (int) (Math.random() * quantityOperators);
+        return OPERATORS_ARRAY[tempNumber];
     }
 
     private static int calc(int a, int b, String operator) {
