@@ -35,7 +35,7 @@ public class ProgressionGame {
             List<String> progressionList = new ArrayList<>();
             makeProgression(progressionList);
             int indexToHide = Utils.getRandomNumber(PROGRESSION_LENGHT);
-            String rightAnswer = progressionList.get(indexToHide);
+            String rightAnswer = progressionList.get(indexToHide - 1);
             progressionList.set(indexToHide, "..");
             qaArray[i][0] = String.join(" ", progressionList);
             qaArray[i][1] = rightAnswer;
