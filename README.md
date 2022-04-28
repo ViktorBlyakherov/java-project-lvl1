@@ -4,9 +4,14 @@
 [![Java CI](https://github.com/ViktorBlyakherov/java-project-lvl1/actions/workflows/gradle.yml/badge.svg)](https://github.com/ViktorBlyakherov/java-project-lvl1/actions/workflows/gradle.yml)
 
 Screenshots on Yandex Disk
+
 https://disk.yandex.ru/i/418fD56dF4Cc8A
+
 https://disk.yandex.ru/i/0U182BpStnI1AA
+
 https://disk.yandex.ru/i/g2U2aMSg3bdz7w
+
 https://disk.yandex.ru/i/MB1X67qPveY7vg
+
 https://disk.yandex.ru/i/Q6wml9FoYgKhMw
 

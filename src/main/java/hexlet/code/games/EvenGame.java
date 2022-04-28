@@ -14,11 +14,8 @@ public class EvenGame {
         for (int i = 0; i < Engine.ROUND_NUMBER; i++) {
             int tempNumber = Utils.getRandomNumber(MAX_RND_NUMBER);
             boolean isEven = (tempNumber % 2 == 0);
-            if (isEven) {
-                qaArray[i][1] = "yes";
-            } else {
-                qaArray[i][1] = "no";
-            }
+
+            qaArray[i][1] = (isEven) ? "yes" : "no";
             qaArray[i][0] = Integer.toString(tempNumber);
         }
         Engine.play(qaArray, TASK_TEXT);

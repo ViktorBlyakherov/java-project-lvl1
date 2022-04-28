@@ -3,7 +3,7 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
-public class Prime {
+public class PrimeGame {
     public static final int MAX_RND_NUMBER = 100;
     public static final String TASK_TEXT = "Answer 'yes' if given number is prime. Otherwise answer 'no'";
 
@@ -23,12 +23,7 @@ public class Prime {
             int firstNumber = Utils.getRandomNumber(MAX_RND_NUMBER);
             qaArray[i][0] = Integer.toString(firstNumber);
             String rightAnswer;
-            if (isPrime(firstNumber)) {
-                rightAnswer = "yes";
-            } else {
-                rightAnswer = "no";
-            }
-            qaArray[i][1] = rightAnswer;
+            qaArray[i][1] = (isPrime(firstNumber)) ? "yes" : "no";
         }
         Engine.play(qaArray, TASK_TEXT);
     }

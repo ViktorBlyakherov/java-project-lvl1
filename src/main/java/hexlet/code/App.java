@@ -2,11 +2,11 @@ package hexlet.code;
 
 
 import java.util.Scanner;
-import hexlet.code.games.Prime;
+import hexlet.code.games.PrimeGame;
 import hexlet.code.games.EvenGame;
 import hexlet.code.games.CalculateGame;
-import hexlet.code.games.GCD;
-import hexlet.code.games.Progression;
+import hexlet.code.games.GCDGame;
+import hexlet.code.games.ProgressionGame;
 
 
 public class App {
@@ -44,13 +44,13 @@ public class App {
                 CalculateGame.playCalculate();
                 break;
             case gcdCode:
-                GCD.playGCD();
+                GCDGame.playGCD();
                 break;
             case progressionCode:
-                Progression.playProgression();
+                ProgressionGame.playProgression();
                 break;
             case primeCode:
-                Prime.playPrime();
+                PrimeGame.playPrime();
                 break;
             default:
                 System.out.println("Такой игры нет!");
