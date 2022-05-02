@@ -12,21 +12,22 @@ public class ProgressionGame {
     private static final int STEP_MAX_SIZE = 10;
 
 
-    private static void makeProgression(List pl) {
+    private static List<String> makeProgression() {
+        List<String> pl = new ArrayList<>();
         int progressionBegin = Utils.getRandomNumber(MAX_RND_NUMBER);
         int progressionStep = Utils.getRandomNumber(STEP_MAX_SIZE);
         for (int i = 0; i < PROGRESSION_LENGHT; i++) {
             pl.add(Integer.toString(progressionBegin));
             progressionBegin = progressionBegin + progressionStep;
         }
+        return pl;
     }
 
     public static void playProgression() {
         String[][] qaArray = new String[Engine.ROUND_NUMBER][2];
 
         for (int i = 0; i < Engine.ROUND_NUMBER; i++) {
-            List<String> progressionList = new ArrayList<>();
-            makeProgression(progressionList);
+            List<String> progressionList = makeProgression();
             int indexToHide = Utils.getRandomNumber(PROGRESSION_LENGHT) - 1;
             String rightAnswer = progressionList.get(indexToHide);
             progressionList.set(indexToHide, "..");

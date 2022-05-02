@@ -22,7 +22,6 @@ public class PrimeGame {
         for (int i = 0; i < Engine.ROUND_NUMBER; i++) {
             int firstNumber = Utils.getRandomNumber(MAX_RND_NUMBER);
             qaArray[i][0] = Integer.toString(firstNumber);
-            String rightAnswer;
             qaArray[i][1] = (isPrime(firstNumber)) ? "yes" : "no";
         }
         Engine.play(qaArray, TASK_TEXT);

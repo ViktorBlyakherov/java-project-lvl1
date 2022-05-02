@@ -2,6 +2,7 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 import hexlet.code.Utils;
+import org.checkerframework.checker.formatter.FormatUtil;
 
 public class CalculateGame {
     public static final int MAX_RND_NUMBER = 100;
@@ -10,7 +11,7 @@ public class CalculateGame {
 
     public static String getRandomOperation() {
         final int quantityOperators = OPERATORS_ARRAY.length;
-        int tempNumber = (int) (Math.random() * quantityOperators);
+        int tempNumber = Utils.getRandomNumber(quantityOperators);
         return OPERATORS_ARRAY[tempNumber];
     }
 
@@ -23,8 +24,7 @@ public class CalculateGame {
             case "*":
                 return a * b;
             default:
-                System.out.println("Неизвестная операция!");
-                return 0;
+                throw new Error("Unknown operator");
         }
     }
 
