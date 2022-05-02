@@ -2,7 +2,7 @@ package hexlet.code.games;
 
 import hexlet.code.Engine;
 import hexlet.code.Utils;
-import org.checkerframework.checker.formatter.FormatUtil;
+
 
 public class CalculateGame {
     public static final int MAX_RND_NUMBER = 100;
@@ -11,7 +11,7 @@ public class CalculateGame {
 
     public static String getRandomOperation() {
         final int quantityOperators = OPERATORS_ARRAY.length;
-        int tempNumber = Utils.getRandomNumber(quantityOperators);
+        int tempNumber = Utils.getRandomNumber(quantityOperators - 1);
         return OPERATORS_ARRAY[tempNumber];
     }
 
